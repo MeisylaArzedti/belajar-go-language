@@ -4,6 +4,7 @@ func main(){
 	var jenis,nominal,transaksi,tagihan,admin,total,pakai,pajak float64
 	var keterangan,status string
 	var tanggal bool
+
 	fmt.Println("=====kalkulator listrik=====\n")
 	
 	status = "y"
@@ -35,7 +36,7 @@ func main(){
 				pajak = 0.02
 			}
 			total = nominal + admin + (nominal * pajak)
-			fmt.Printf("keterangan: %v\nadmin: Rp %v \npajak: %.0f%% \ntotal: Rp %v\n\n", keterangan, admin, pajak * 100, total)
+			fmt.Printf("keterangan: %v\nadmin: Rp %v \npajak: %.0f%% \ntotal: Rp %v\n\n\n", keterangan, admin, pajak * 100, total)
 			
 			
 			
@@ -62,7 +63,8 @@ func main(){
 			total = pakai
 			fmt.Println("total : Rp", total, "\n")
 			
-			
+			default:
+			fmt.Println("pilihan tidak valid")
 		}
 		
 		transaksi++
@@ -70,6 +72,14 @@ func main(){
 		fmt.Print("hitung lagi? (y/n):")
 		fmt.Scan(&status)
 		fmt.Print("\n")
+		
+		for status != "y" && status != "n"{
+		fmt.Println("EROR\n")
+			
+		fmt.Print("hitung lagi? (y/n):")
+		fmt.Scan(&status)
+		fmt.Print("\n")
+		}
 	}
 	
 	fmt.Printf("=====rekap====\ntotal transaksi:%v\ntotal tagihan : Rp %.0f", transaksi, tagihan)
